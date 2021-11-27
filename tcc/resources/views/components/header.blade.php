@@ -81,6 +81,8 @@ h2{
   border-radius: 30px;
 }
 
+/*Busca*/ 
+
 #busca{
   padding: 20px;
   margin: auto;
@@ -123,7 +125,7 @@ h2{
   border-top-right-radius: 10px;
 }
 
-#anuncios-container .btn-enviar{
+#anuncios-container .btn-vermais{
   text-decoration: none;
   background-color: #FF8C00;
   color: #FFFFFF;
@@ -133,7 +135,7 @@ h2{
   
 }
 
-#anuncios-container .btn-enviar:hover{
+#anuncios-container .btn-vermais:hover{
   background-color: #000F45;
 }
 
@@ -205,6 +207,18 @@ body{
   background-color: #f0f0f0;
 }
 
+/*Reservar*/ 
 
+.reservar{
+  text-decoration: none;
+  background-color: #FF8C00;
+  color: #FFFFFF;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.reservar:hover{
+  background-color: #000F45;
+}
 </style>
     </head>

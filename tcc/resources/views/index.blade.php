@@ -24,7 +24,7 @@
               <h5 class="card-title">{{$anuncio->titulo}}</h5>
               <h5 class="card-address">{{$anuncio->endereco}}</h5>
               <h5 class="card-cep">{{$anuncio->univ}}</h5>
-              <a href="/anuncios/{{$anuncio->id}}" class="btn-enviar">Ver mais</a>
+              <a href="/anuncios/{{$anuncio->id}}" class="btn-vermais">Ver mais</a>
               
             </div>
         </div>

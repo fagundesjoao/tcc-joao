@@ -22,6 +22,8 @@
             <h5>Descrição</h5><p>{{$anuncio->descricao}}</p>
             <tr>
             <h5>Preço</h5><p>R$ {{$anuncio->preco}}</p>
+
+            <a href=# class="reservar">Reservar</a>
             
         </div>
         </div>

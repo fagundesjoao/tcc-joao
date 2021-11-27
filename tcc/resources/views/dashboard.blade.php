@@ -27,7 +27,7 @@
                 <form action="/anuncios/{{$anuncio->id}}" method="POST">
                     @csrf 
                     @method('DELETE')
-                    <button type="submit">Deletar</button>
+                    <button type="submit" onclick="return confirm('Você tem certeza que quer excluir este anúncio?')">Deletar</button>
                 </form>
                 </td>
                 </tr>
