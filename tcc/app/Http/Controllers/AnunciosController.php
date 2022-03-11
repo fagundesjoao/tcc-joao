@@ -13,6 +13,7 @@ class AnunciosController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
     
     public function index()
     {
@@ -119,7 +120,23 @@ class AnunciosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Anuncio::findOrFail($request->id)->update($request->all());
+        $data = $request->all();
+
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            
+            $requestImage = $request->image;
+            
+            $extension =  $requestImage->extension();
+            
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $request->image->move(public_path('img/anuncios'), $imageName);
+
+            $data['image'] = $imageName;
+            
+        }
+
+        Anuncio::findOrFail($request->id)->update($data);
 
         return redirect('/dashboard')->with('msg', 'Anúncio editado com sucesso!');
     }

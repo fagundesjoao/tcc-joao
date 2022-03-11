@@ -22,8 +22,25 @@
             <h5>Descrição</h5><p>{{$anuncio->descricao}}</p>
             <tr>
             <h5>Preço</h5><p>R$ {{$anuncio->preco}}</p>
+            <br/>
+            <br/>
+            
+             <h5>Verificar Disponibilidade</h5>      
+        <form action="/index" id="formRes" method="post" enctype="multipart/form-data">
+            @csrf
+            Data Inicial: <input type="date" name="data_inicial" id="di">
+            <br/>
+            <br/>
+            Data Final: <input type="date" name="data_final" id="df">
+            <br/>
+            <br/>
+           
+            <input type="submit" value="Verificar"/>
 
-            <a href=# class="reservar">Reservar</a>
+        
+        </form> 
+       
+            
             
         </div>
         </div>

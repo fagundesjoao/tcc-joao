@@ -27,7 +27,7 @@
         <input type="number" name="preco" id="preco" placeholder="Preço" value="{{$anuncio->preco}}" required/><br/><br/>
         <label for="img">Enviar imagem:</label>
        
-        <input type="file" id="img" name="image" accept="image/png, image/jpeg"/>
+        <input type="file" id="image" name="image" accept="image/png, image/jpeg"/>
         <br/><br/>
         <input type="submit" value="Editar Anúncio"/>
 

@@ -7,13 +7,22 @@
     
     <div id="busca">
               
-        <form action="" method="post" class="campo_busca">
-        
-        <input type="text" placeholder="Pesquisar..."/>
+               
+        <form action="/disponiveis" id="formRes" method="POST">
+            @csrf
+            Data Inicial: <input type="date" name="data_inicial" id="di" required>
+            <br/>
+            <br/>
+            Data Final: <input type="date" name="data_final" id="df" required>
+            <br/>
+            <br/>
+           
+            <input type="submit" value="Buscar"/>
+
         
         </form> 
         
-    </div>
+  
     <div id="anuncios-container" class="col-md-12">
     <h2>Anúncios</h2>
     <div id="cards-container" class="row">
@@ -30,9 +39,12 @@
         </div>
         
         @endforeach
+   
+
+
     </div>
-</div>
-    
+
+   
     </body>
 </hmtl>
  

@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/disponiveis', function(){
+    return view('disponiveis');
+})->middleware(['auth'])->name('disponiveis');
 
 // Route::get('/anuncios/create', [AnunciosController::class, 'create'])->middleware('auth');
 
@@ -26,6 +29,8 @@ Route::get('/anuncios/create', function () {
 })->middleware(['auth'])->name('anuncios/create');
 
 Route::post('/anuncios', 'AnunciosController@store');
+
+Route::post('/disponiveis', 'ReservasController@verificacao');
 
 
 Route::get('/anuncios/{id}','AnunciosController@show');
@@ -36,8 +41,8 @@ Route::put('/anuncios/update/{id}', 'AnunciosController@update')->middleware('au
 
 Route::get('/logout', '\App\Http\Controllers\Auth\AuthenticatedSessionController@destroy');
 
-
-Route::get('/index', 'AnunciosController@index');
+Route::post('/index', 'ReservasController@index')->middleware('auth');
+Route::get('/index', 'AnunciosController@index')->middleware('auth');
 
 
 Route::get('/dashboard','AnunciosController@dashboard', function () {

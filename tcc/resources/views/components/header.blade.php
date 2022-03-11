@@ -4,9 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>TCC</title>
-       
-        
-
+     
         <style>
 input[type=text], select {
   width: 49%;
@@ -160,6 +158,7 @@ body{
   margin-top: 10px;
   border-radius: 10px;
 }
+/*Reserva*/
 
 #info-container{
   
@@ -168,6 +167,10 @@ body{
   border: 1px solid #DCDCDC;
   border-radius: 10px;
   
+}
+
+#info-container a{
+  text-align: center;
 }
 
 .titulo_anuncio{
@@ -209,16 +212,39 @@ body{
 
 /*Reservar*/ 
 
+
 .reservar{
   text-decoration: none;
-  background-color: #FF8C00;
-  color: #FFFFFF;
+  color: #000F45;
+  border: 1px solid #DCDCDC;
   padding: 1px;
   border-radius: 5px;
+  text-align: center;
+}
+
+a.reservar{
+  display: block;
 }
 
 .reservar:hover{
-  background-color: #000F45;
+  color: #FF8C00;
+  
+}
+
+.modal-container{
+  width: 50%;
+  height: 100%;
+  margin-left: 25%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  opacity: 0;
+  background-color: #F0F0F0;
+  border-radius: 5px;
+}
+
+.modal-container.show{
+  opacity: 1;
 }
 </style>
     </head>

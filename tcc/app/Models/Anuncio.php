@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class Anuncio extends Model
 {
+    
     protected $fillable=[
-        'id_user',
         'titulo', 
         'endereco',
         'cep',
@@ -16,7 +18,8 @@ class Anuncio extends Model
         'area_total',
         'qtd_quartos',
         'descricao',
-        'preco'
+        'preco',
+        'image'
         ];
 
     protected $guarded = [];
