@@ -11,7 +11,8 @@ class Reserva extends Model
            'data_inicial', 
            'data_final', 
            'preco', 
-           'total'];
+           'total',
+           'ocupado'];
 
     public function user(){
         return $this->belongsTo('App\Models\User');

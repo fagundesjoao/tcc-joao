@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Anuncio;
 
+
 class AnunciosController extends Controller
 {
     /**
@@ -76,16 +77,26 @@ class AnunciosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {   
+        $inicio = $request->input('inicio');
+        $fim = $request->input('fim');
+        $preco = $request->input('preco');
         $anuncio = Anuncio::findOrFail($id);
-        //return view('read',['anuncios' => $anuncio]);
-        //dump();
-        //$anuncio = Anuncio::where('id',$id)->first()->get();
-        //$anuncio = Anuncio::findOrFail($id);
-        //$anuncios = Anuncio::all();
-        //dd($anuncio);
-        return view('read', ['anuncio'=>$anuncio]);
+       
+        $dinicial = strtotime($inicio);
+        $dfinal = strtotime($fim);
+
+        $diferenca = abs($dfinal-$dinicial);
+        $ndias = $diferenca/86400;
+
+        $ndias = intval($ndias);
+        $ndias = $ndias + 1;
+        
+        $total = $preco * $ndias;
+
+        //dd($total);
+        return view('read', ['anuncio'=>$anuncio, 'inicio'=>$inicio, 'fim'=>$fim, 'total'=>$total]);
         
     }
 

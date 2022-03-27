@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use League\Period\Period;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\Reserva;
 
 class ReservasController extends Controller
 {
@@ -15,16 +16,31 @@ class ReservasController extends Controller
      */
 
     public function verificacao(Request $request){
-
-       $data_inicial = $request->input('data_inicial');
-       //dd("aqui");
-       $vdimovel=DB::SELECT("select * from anuncios where id not in (select id from reservas where '$data_inicial' BETWEEN data_inicial and data_final)");
-        //dd($vdimovel);
+        $preco = $request->input('preco');
+        $data_inicial = $request->input('data_inicial');
+        $data_final = $request->input('data_final');
        
-        return view('/disponiveis', ['vdimovel' => $vdimovel]);
+       
+       if($data_inicial<=$data_final){
+        $anuncios=DB::SELECT("select * from anuncios where id not in (select id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco'  ");
+       
+            
+        
+        return view('disponiveis', ['anuncios' => $anuncios, 'data_inicial' => $data_inicial, 'data_final' => $data_final ]);
+      
+      
+       }else{
+           echo '<button class="voltar" onClick="history.go(-1)"><<<</button> <br>';
+           print("Erro! Verifique as datas inseridas e tente novamente.");
+       }
+        
      }
 
+    public function reservar (Request $request){
+        
+    }
 
+    
     
     public function index()
     {
@@ -38,7 +54,7 @@ class ReservasController extends Controller
      */
     public function create()
     {
-        //
+        return view('read', ['action'=>route('reservas.store'), 'method'=>'post']);
     }
 
     /**
@@ -49,7 +65,18 @@ class ReservasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reserva = new Reserva;
+
+        $reserva->user_id = Auth::user()->id;
+        $reserva->anuncio_id = $request->anuncio_id;
+        $reserva->data_inicial = $request->data_inicial;
+        $reserva->data_final = $request->data_final;
+        $reserva->preco = $request->preco;
+        $reserva->total = $request->total;
+        $reserva->ocupado = '1';
+
+        $reserva->save();
+        return view('index');
     }
 
     /**

@@ -3,7 +3,7 @@
 
 <body>
 
-    <button class="voltar" onClick="history.go(-1)">Voltar</button>
+    <button class="voltar" onClick="history.go(-1)"><<<</button>
     <div id="form">
     
     <h2>Edição de Anúncio: {{$anuncio->titulo}}</h2>

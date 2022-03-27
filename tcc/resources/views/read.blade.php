@@ -13,7 +13,7 @@
             </div>
         
         <div id="info-container" class="col-md-6">
-                      
+                  
             <h5>Endereço</h5><p>{{$anuncio->endereco}}</p>
             <h5>CEP</h5><p>{{$anuncio->cep}}</p>
             <h5>Universidade Próxima</h5><p>{{$anuncio->univ}}</p>
@@ -21,21 +21,25 @@
             <h5>Quartos</h5><p>{{$anuncio->qtd_quartos}}</p>
             <h5>Descrição</h5><p>{{$anuncio->descricao}}</p>
             <tr>
-            <h5>Preço</h5><p>R$ {{$anuncio->preco}}</p>
+            <h5>Preço (diária)</h5><p>R$ {{$anuncio->preco}}</p>
             <br/>
             <br/>
             
-             <h5>Verificar Disponibilidade</h5>      
-        <form action="/index" id="formRes" method="post" enctype="multipart/form-data">
+            <h5>Reserva</h5>      
+            <form action="/reservar" id="formRes" method="post" enctype="multipart/form-data">
             @csrf
-            Data Inicial: <input type="date" name="data_inicial" id="di">
+            Data Inicial: <input type="date" name="data_inicial" id="di" value="{{$inicio}}" readonly required>
             <br/>
             <br/>
-            Data Final: <input type="date" name="data_final" id="df">
+            Data Final: <input type="date" name="data_final" id="df" value="{{$fim}}" readonly required>
             <br/>
             <br/>
+            Preço (R$): <input type="number" name="preco" id=preco value="{{$anuncio->preco}}" readonly required>
+            <br/>
+            <br/>
+            Total (R$): <input type="number" name="total" id="total" value="{{$total}}" readonly required>
            
-            <input type="submit" value="Verificar"/>
+            <input type="submit" class="reservar" value="Reservar"/>
 
         
         </form> 

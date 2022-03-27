@@ -129,7 +129,7 @@ h2{
   color: #FFFFFF;
   padding: 1px;
   border-radius: 5px;
-  
+  width: 25%;
   
 }
 
@@ -206,8 +206,10 @@ body{
 
 .voltar{
   border-radius: 20px;
+  border-color: #ffffff;
   width: 5%;
-  background-color: #f0f0f0;
+  background-color: #000F45;
+  color: #ffffff;
 }
 
 /*Reservar*/ 
@@ -246,5 +248,21 @@ a.reservar{
 .modal-container.show{
   opacity: 1;
 }
+
+#busca_imovel{
+  width: 50%;
+}
+
+#formRes{
+  width: 50%;
+  color: #000F45;
+  
+}
+
+#freserva{
+  text-align: center;
+}
+
+
 </style>
     </head>
