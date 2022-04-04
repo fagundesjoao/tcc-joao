@@ -22,6 +22,11 @@ Route::post('/disponiveis', function(){
     return view('disponiveis');
 })->middleware(['auth'])->name('disponiveis');
 
+Route::post('/pagar', function(){
+    return view('pagar');
+})->middleware(['auth'])->name('pagar');
+
+Route::post('/pagar', 'ReservasController@pagar');
 
 Route::get('/anuncios/create', function () {
     return view('anuncios/create');
@@ -40,10 +45,10 @@ Route::post('/disponiveis', 'ReservasController@verificacao')->middleware(['auth
 
 //Reserva
 Route::post('/reservar', 'ReservasController@store');
-
+Route::get('/minhas_reservas', 'ReservasController@minhasReservas');
 
 //Encerrar sessão
-Route::get('/logout', '\App\Http\Controllers\Auth\AuthenticatedSessionController@destroy');
+Route::get('/logout', '\App\Http\Controllers\Auth\AuthenticatedSessionController@destroy')->middleware(['auth'])->name('/minhas_reservas');;
 
 //Home
 Route::post('/index', 'ReservasController@index')->middleware('auth');

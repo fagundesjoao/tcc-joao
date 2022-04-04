@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.5",
         "league/period": "^4.12",
         "livewire/livewire": "^2.10",
+        "pagseguro/pagseguro-php-sdk": "^6.0",
         "spatie/period": "^1.6"
     },
     "require-dev": {

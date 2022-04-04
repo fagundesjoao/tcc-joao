@@ -5,25 +5,38 @@
 
 <body>
     
-    <div id="busca">
+    <div id="datas">
               
                
-        <form action="/disponiveis" id="formRes" method="POST">
+        <form action="/disponiveis" id="formBusca" method="POST">
             @csrf
-            Data Inicial: <input type="date" name="data_inicial" id="di" required>
-            <br/>
-            <br/>
-            Data Final: <input type="date" name="data_final" id="df" required>
-            <br/>
-            <br/>
-            Diária (R$):<input type="number" name="preco" id="preco" value="1000" required>
-            <br/>
-            <input type="submit" id="busca_imovel" value="Buscar"/>
+
+            <table id="tabela-busca"> 
+                <tr>
+                    <td><h4>Datas Inicial</h4></td>
+                    <td><h4>Datas Final</h4></td>
+                    <td><h4>Preço diária</h4></td>
+                    
+                </tr>   
+
+                <tr>
+                    <td><input type="date" name="data_inicial" class="data_inicial" id="di" required> </td>
+                    <td><input type="date" name="data_final" class="data_final" id="df" required></td>
+                    <td><input type="number" name="preco" class="preco" id="preco" value="1000" required></td>
+                    
+                </tr>
+
+            </table>
+                <input type="submit" id="busca_imovel" class="busca_imovel" value="Buscar"/>
+            
+                     
+            
 
         
         </form> 
         
-  
+        
+
      
     </body>
 </hmtl>

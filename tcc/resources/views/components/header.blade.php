@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>TCC</title>
-     
+ 
         <style>
 input[type=text], select {
   width: 49%;
@@ -16,7 +16,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-  width: 100%;
+  width: 50%;
   background-color: #000F45;
   color: white;
   padding: 14px 20px;
@@ -90,20 +90,60 @@ h2{
   border-bottom-left-radius: 30px;
 }
 
+#datas{
+  
+  margin: auto;
+  width: 100%;
+  background-color: #F0F0F0;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+ 
+}
+
+#formBusca{
+  width: 100%;
+  text-align: center;
+}
+
+#tabela-busca{
+  width: 100%;
+}
+
+
+.data_inicial{
+  width: 100%;
+}
+
+.data_final{
+  width: 100%;
+  
+}
+
+.preco{
+  width: 98%;
+}
+
+#busca_imovel{
+  width: 15%;
+}
+
 .campo_busca input{
   width: 50%;
   margin-left: 25%;
 }
 
+/* Containers anúncios */
+
 #anuncios-container{
   padding:50px;
- 
+  
   
 }
 
 #cards-container{
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 #anuncios-container .card{
@@ -114,7 +154,7 @@ h2{
   margin: 5px;
   border: 0.5px solid #CCC;
   text-align: center;
- 
+  background-color: #FFF;
 }
 
 #anuncios-container img{
@@ -249,9 +289,6 @@ a.reservar{
   opacity: 1;
 }
 
-#busca_imovel{
-  width: 50%;
-}
 
 #formRes{
   width: 50%;
@@ -260,6 +297,30 @@ a.reservar{
 }
 
 #freserva{
+  text-align: center;
+}
+
+#pagar{
+  padding: 5px;
+  text-align:center;
+  width: 50%;
+  background-color: #F0F0F0;
+  border: 1px solid #DCDCDC;
+  border-radius: 10px;
+  margin-left: 25%;
+  
+}
+
+/* Agenda */
+
+.agenda_reservas{
+  width: 50%;
+  align-items: center;
+  margin-left: 25%;
+}
+
+#reserva-imoveis{
+  width: 100%;
   text-align: center;
 }
 

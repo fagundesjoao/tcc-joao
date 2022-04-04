@@ -26,8 +26,11 @@
             <br/>
             
             <h5>Reserva</h5>      
-            <form action="/reservar" id="formRes" method="post" enctype="multipart/form-data">
+            <form action="/pagar" id="formRes" method="post" enctype="multipart/form-data">
             @csrf
+
+            <input type="number" name="id" id="id" value="{{$anuncio->id}}" readonly hidden>
+
             Data Inicial: <input type="date" name="data_inicial" id="di" value="{{$inicio}}" readonly required>
             <br/>
             <br/>
