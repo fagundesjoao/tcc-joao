@@ -27,6 +27,7 @@ class CreateAnunciosTable extends Migration
             $table->integer('qtd_quartos');
             $table->string('descricao');
             $table->double('preco',10,2);
+            $table->string('image');
             $table->timestamps();
         });
 

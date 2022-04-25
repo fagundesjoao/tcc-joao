@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Reserva;
-use PagSeguro\Configuration\Configure;
+use App\Http\Controllers\PaymentController;
 
 class ReservasController extends Controller
 {
@@ -16,19 +16,7 @@ class ReservasController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    private $_configs;
 
-    public function __construct(){
-        $this->_configs = new Configure();
-        $this->_configs->setCharset("UTF-8");
-        $this->_configs->setAccountCredentials(env('PAGSEGURO_EMAIL'), env('PAGSEGURO_TOKEN'));
-        $this->_configs->setEnvironment(env('PAGSEGURO_AMBIENTE'));
-        $this->_configs->setLog(true, storage_path('logs/pagseguro_'. date('Ymd'). 'log'));
-    }
-
-    public function getCredential(){
-        return $this->_configs->getAccountCredentials();
-    }
 
     public function minhasReservas(){
 
@@ -99,9 +87,12 @@ class ReservasController extends Controller
         $reserva->preco = $request->preco;
         $reserva->total = $request->total;
         $reserva->ocupado = '1';
+        $reserva->pago = '0';
 
         $reserva->save();
-        return view('index');
+
+        $vtotal = $reserva->total;
+        return view('pagar',['vtotal'=>$vtotal]);
     }
 
     /**
@@ -149,16 +140,5 @@ class ReservasController extends Controller
         //
     }
 
-    public function pagar(Request $request){
-        $data = [];
-
-        $sessionCode = \PagSeguro\Services\Session::create(
-            $this->getCredential()
-        );
-
-        $IDSession = $sessionCode->getResult();
-        $data["sessionID"] = $IDSession;
-
-        return view("pagar", $data);
-    }
+   
 }

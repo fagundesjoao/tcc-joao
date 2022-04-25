@@ -23,6 +23,8 @@ class CreateReservasTable extends Migration
             $table->date('data_final');
             $table->integer('preco');
             $table->integer('total');
+            $table->tinyInteger('ocupado');
+            $table->tinyInteger('pago');
             $table->timestamps();
         });
 

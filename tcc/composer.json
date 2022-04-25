@@ -11,10 +11,11 @@
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "league/omnipay": "^3.2",
         "league/period": "^4.12",
         "livewire/livewire": "^2.10",
-        "pagseguro/pagseguro-php-sdk": "^6.0",
-        "spatie/period": "^1.6"
+        "omnipay/stripe": "^3.2",
+        "stripe/stripe-php": "^7.125"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

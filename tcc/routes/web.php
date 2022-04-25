@@ -26,7 +26,11 @@ Route::post('/pagar', function(){
     return view('pagar');
 })->middleware(['auth'])->name('pagar');
 
-Route::post('/pagar', 'ReservasController@pagar');
+
+//Pagamento
+
+Route::any('/pagar', 'PaymentController@index');
+Route::any('/confirmarPagamento', 'PaymentController@stripePost');
 
 Route::get('/anuncios/create', function () {
     return view('anuncios/create');
@@ -44,11 +48,11 @@ Route::put('/anuncios/update/{id}', 'AnunciosController@update')->middleware('au
 Route::post('/disponiveis', 'ReservasController@verificacao')->middleware(['auth'])->name('/disponiveis');
 
 //Reserva
-Route::post('/reservar', 'ReservasController@store');
+Route::post('/pagar', 'ReservasController@store');
 Route::get('/minhas_reservas', 'ReservasController@minhasReservas');
 
 //Encerrar sessão
-Route::get('/logout', '\App\Http\Controllers\Auth\AuthenticatedSessionController@destroy')->middleware(['auth'])->name('/minhas_reservas');;
+Route::get('/logout', '\App\Http\Controllers\Auth\AuthenticatedSessionController@destroy');
 
 //Home
 Route::post('/index', 'ReservasController@index')->middleware('auth');
