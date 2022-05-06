@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//Home
 Route::get('/', function () {
     return view('welcome');
 });
 
+//Imóveis disponíveis
 Route::post('/disponiveis', function(){
     return view('disponiveis');
 })->middleware(['auth'])->name('disponiveis');
 
+//View de pagamento
 Route::post('/pagar', function(){
     return view('pagar');
 })->middleware(['auth'])->name('pagar');
@@ -49,7 +51,7 @@ Route::post('/disponiveis', 'ReservasController@verificacao')->middleware(['auth
 
 //Reserva
 Route::post('/pagar', 'ReservasController@store');
-Route::get('/minhas_reservas', 'ReservasController@minhasReservas');
+Route::get('/agenda', 'ReservasController@minhasReservas');
 
 //Encerrar sessão
 Route::get('/logout', '\App\Http\Controllers\Auth\AuthenticatedSessionController@destroy');

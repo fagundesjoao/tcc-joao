@@ -3,7 +3,7 @@
 
 
 
-<body>
+
     
     <h2 class="titulo_anuncio">{{$anuncio->titulo}}</h2>
     <div class="col-md-10 offset-md-1">
@@ -19,6 +19,7 @@
             <h5>Universidade Próxima</h5><p>{{$anuncio->univ}}</p>
             <h5>Área total (m²)</h5><p>{{$anuncio->area_total}}</p>
             <h5>Quartos</h5><p>{{$anuncio->qtd_quartos}}</p>
+            <h5>Hóspedes</h5><p>{{$anuncio->qtd_hospedes}}</p>
             <h5>Descrição</h5><p>{{$anuncio->descricao}}</p>
             <tr>
             <h5>Preço (diária)</h5><p>R$ {{$anuncio->preco}}</p>

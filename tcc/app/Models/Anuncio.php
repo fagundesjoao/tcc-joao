@@ -14,9 +14,11 @@ class Anuncio extends Model
         'titulo', 
         'endereco',
         'cep',
+        'bairro',
         'univ',
         'area_total',
         'qtd_quartos',
+        'qtd_hospedes',
         'descricao',
         'preco',
         'image'

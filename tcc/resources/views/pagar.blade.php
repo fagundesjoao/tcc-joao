@@ -55,7 +55,7 @@
                         <div class='form-row row'>
                            <div class='col-xs-12 form-group required'>
                               <label class='control-label'>Valor(R$)</label> <input
-                                 class='form-control' name='valor' value="{{$vtotal}}" size='60' type='number' required>
+                                 class='form-control' name='valor' value="{{$vtotal}}" size='60' type='number' readonly required>
                            </div>
                         </div>
                         <div class='form-row row'>

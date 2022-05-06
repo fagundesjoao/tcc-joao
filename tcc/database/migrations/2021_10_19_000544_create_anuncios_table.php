@@ -22,9 +22,11 @@ class CreateAnunciosTable extends Migration
             $table->string('titulo', 100);
             $table->string('endereco', 300);
             $table->string('cep', 9);
+            $table->string('bairro', 80);
             $table->string('univ');                             
             $table->integer('area_total');
             $table->integer('qtd_quartos');
+            $table->integer('qtd_hospedes');
             $table->string('descricao');
             $table->double('preco',10,2);
             $table->string('image');

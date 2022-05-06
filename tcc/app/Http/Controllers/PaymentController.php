@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Session;
 use Stripe;
 
@@ -30,13 +31,19 @@ class PaymentController extends Controller
             "description" => "Teste"
 
         ]);
+        
         $user_id = Auth::user()->id;
         $pagamento = DB::UPDATE("update reservas set pago = 1 where pago = 0 and user_id='$user_id' order by created_at desc limit 1");
 
         Session::flash('sucess', 'Pagamento realizado com sucesso');
 
+        Mail::raw('Você acaba de realizar uma reserva.', function($message){
+            $message->to(Auth::user()->email)->subject('Reserva de Imóvel');
+        });
+
         return redirect('index');
     }
 
+    
     
 }

@@ -47,9 +47,11 @@ class AnunciosController extends Controller
         $anuncio->titulo = $request->titulo;
         $anuncio->endereco = $request->endereco;
         $anuncio->cep = $request->cep;
+        $anuncio->bairro = $request->bairro;
         $anuncio->univ = $request->univ;
         $anuncio->area_total = $request->area_total;
         $anuncio->qtd_quartos = $request->qtd_quartos;
+        $anuncio->qtd_hospedes = $request->qtd_hospedes;
         $anuncio->descricao = $request->descricao;
         $anuncio->preco = $request->preco;
 

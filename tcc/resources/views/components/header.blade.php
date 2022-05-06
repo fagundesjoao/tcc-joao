@@ -15,7 +15,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+/* input[type=submit] {
   width: 50%;
   background-color: #000F45;
   color: white;
@@ -24,7 +24,7 @@ input[type=submit] {
   border: none;
   border-radius: 30px;
   cursor: pointer;
-}
+} */
 
 input[type=submit]:hover {
   background-color: #4682B4;
@@ -40,8 +40,19 @@ input[type=submit]:hover {
   margin-left: 25%;
   margin-top: 5%;
 }
-h2{
+h3{
   text-align: center;
+}
+
+.criar_anuncio{
+  width: 50%;
+  margin-left: 25%;
+  background-color: #000F45;
+  color: #fff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 /* Add a black background color to the top navigation */
@@ -49,7 +60,7 @@ h2{
   background-color: #000F45;
   width: 100%;
   overflow: hidden;
-  margin: auto;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -111,16 +122,20 @@ h2{
 
 
 .data_inicial{
-  width: 100%;
+  width: 90%;
 }
 
 .data_final{
-  width: 100%;
+  width: 90%;
   
 }
 
 .preco{
   width: 98%;
+}
+
+.hospedes{
+  width: 90%;
 }
 
 #busca_imovel{

@@ -2,7 +2,7 @@
 @include('/components/navbar')
 
 
-<body>
+
     
     <div id="reserva-imoveis">
       

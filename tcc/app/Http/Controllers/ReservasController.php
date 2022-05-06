@@ -23,7 +23,7 @@ class ReservasController extends Controller
         $user_id = Auth::user()->id;
         $reservas = DB::SELECT("select anuncios.id, anuncios.titulo, reservas.anuncio_id, reservas.data_inicial, reservas.data_final from anuncios, reservas where anuncios.id = reservas.anuncio_id and anuncios.user_id = '$user_id'");
 
-        return view('minhas_reservas', ['reservas' => $reservas]);
+        return view('agenda', ['reservas' => $reservas]);
     }
 
     public function verificacao(Request $request){
