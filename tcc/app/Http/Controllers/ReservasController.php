@@ -30,11 +30,12 @@ class ReservasController extends Controller
         $preco = $request->input('preco');
         $data_inicial = $request->input('data_inicial');
         $data_final = $request->input('data_final');
-       
+        $hospedes = $request->input('hospedes');
+        $univ = $request->input('univ');
         $user_id = Auth::user()->id;
        
        if($data_inicial<=$data_final){
-        $anuncios=DB::SELECT("select * from anuncios where id not in (select anuncio_id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco' and user_id != '$user_id'  ");
+        $anuncios=DB::SELECT("select * from anuncios where id not in (select anuncio_id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco' and user_id != '$user_id' and univ = '$univ' and qtd_hospedes>='$hospedes'  ");
        
             
         
