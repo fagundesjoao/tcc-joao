@@ -6,6 +6,7 @@
         <title>TCC</title>
  
         <style>
+       
 input[type=text], select {
   width: 49%;
   padding: 12px 20px;
@@ -28,6 +29,7 @@ input[type=text], select {
 
 input[type=submit]:hover {
   background-color: #4682B4;
+  
 }
 
 #form{
@@ -95,17 +97,14 @@ h3{
 #busca{
   padding: 20px;
   margin: auto;
-  /* width: 70%; */
-  background-color: #F0F0F0;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+
 }
 
 #datas{
   
   margin: auto;
   width: 100%;
-  background-color: #F0F0F0;
+  background-color: #FAFAFA;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
  
@@ -122,29 +121,37 @@ h3{
 
 
 .data_inicial{
-  width: 90%;
+  width: 100%;
+  border-radius: 20px;
 }
 
 .data_final{
-  width: 90%;
-  
+  width: 100%;
+  border-radius: 20px;
 }
 
 .preco{
-  width: 98%;
+  width: 100%;
+  border-radius: 20px;
 }
 
 .hospedes{
-  width: 90%;
+  width: 100%;
+  border-radius: 20px;
 }
 
-#busca_imovel{
-  width: 15%;
+.universidade{
+  background-color: #FFF;
+  width: 100%;
 }
 
-.campo_busca input{
-  width: 50%;
-  margin-left: 25%;
+
+.busca_imovel{
+  border-radius: 20px;
+  background-color: #000F45;
+  color: #FFF;
+  padding: 5px;
+  border: none;
 }
 
 /* Containers anúncios */
@@ -169,7 +176,7 @@ h3{
   margin: 5px;
   border: 0.5px solid #CCC;
   text-align: center;
-  background-color: #FFF;
+  background-color: #FAFAFA;
 }
 
 #anuncios-container img{
@@ -340,5 +347,7 @@ a.reservar{
 }
 
 
+
+
 </style>
-    </head>
+  

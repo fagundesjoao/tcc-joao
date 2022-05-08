@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 //Imóveis disponíveis
 Route::post('/disponiveis', function(){
     return view('disponiveis');
@@ -51,7 +52,8 @@ Route::post('/disponiveis', 'ReservasController@verificacao')->middleware(['auth
 
 //Reserva
 Route::post('/pagar', 'ReservasController@store');
-Route::get('/agenda', 'ReservasController@minhasReservas');
+Route::get('/agenda', 'ReservasController@agenda');
+Route::get('/reservas', 'ReservasController@minhasReservas');
 
 //Encerrar sessão
 Route::get('/logout', '\App\Http\Controllers\Auth\AuthenticatedSessionController@destroy');
@@ -63,7 +65,7 @@ Route::get('/index', 'AnunciosController@index')->middleware('auth');
 //Dashboard
 Route::get('/dashboard','AnunciosController@dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 

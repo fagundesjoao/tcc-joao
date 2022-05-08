@@ -37,20 +37,39 @@
         
     </head>
     <body class="antialiased">
-        <div class="menu">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registro</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    @if (Route::has('login'))
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @auth
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ url('dashboard') }}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ url('/logout') }}">Logout</a>
+        </li>
+        @else
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ route('login') }}">Login</a>
+        </li>
+        @if (Route::has('register'))
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ route('register') }}">Registro</a>
+        </li>
+        @endif
+            @endauth
+      </ul>
+     
+    </div>
+     @endif
+  </div>
+</nav>
             
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">

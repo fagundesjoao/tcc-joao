@@ -18,12 +18,20 @@ class ReservasController extends Controller
 
 
 
-    public function minhasReservas(){
+    public function agenda(){
 
         $user_id = Auth::user()->id;
         $reservas = DB::SELECT("select anuncios.id, anuncios.titulo, reservas.anuncio_id, reservas.data_inicial, reservas.data_final from anuncios, reservas where anuncios.id = reservas.anuncio_id and anuncios.user_id = '$user_id'");
 
         return view('agenda', ['reservas' => $reservas]);
+    }
+
+    public function minhasReservas(){
+       $user_id = Auth::user()->id;
+        
+       $minhas_reservas = DB::table('reservas')->where('user_id', $user_id)->paginate(10);
+
+       return view('reservas', ['minhas_reservas' => $minhas_reservas]);
     }
 
     public function verificacao(Request $request){
@@ -35,7 +43,7 @@ class ReservasController extends Controller
         $user_id = Auth::user()->id;
        
        if($data_inicial<=$data_final){
-        $anuncios=DB::SELECT("select * from anuncios where id not in (select anuncio_id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco' and user_id != '$user_id' and univ = '$univ' and qtd_hospedes>='$hospedes'  ");
+        $anuncios=DB::SELECT("select * from anuncios where id not in (select anuncio_id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco' and user_id != '$user_id' and univ = '$univ' and qtd_hospedes>='$hospedes' ");
        
             
         

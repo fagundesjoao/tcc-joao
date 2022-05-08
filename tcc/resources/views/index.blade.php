@@ -4,7 +4,7 @@
 
 
 
-    
+
     <div id="datas">
               
                
@@ -13,11 +13,11 @@
 
             <table id="tabela-busca"> 
                 <tr>
-                    <td><h4>Data Inicial</h4></td>
-                    <td><h4>Data Final</h4></td>
-                    <td><h4>Preço diária</h4></td>
-                    <td><h4>Nº de Hóspedes</h4></td>
-                    <td><h4>Universidade</h4></td>
+                    <td><h5>Data Inicial:</h5></td>
+                    <td><h5>Data Final:</h5></td>
+                    <td><h5>Preço até:</h5></td>
+                    <td><h5>Nº de Hóspedes:</h5></td>
+                    <td><h5>Universidade:</h5></td>
                 </tr>   
 
                 <tr>
@@ -26,8 +26,8 @@
                     <td><input type="number" name="preco" class="preco" id="preco" value="1000" required></td>
                     <td><input type="number" name="hospedes" class="hospedes" id="hospedes" value="0" required></td>
                     <td>
-                        <select name="univ" id="univ">
-                        <option value="IFSP">IFSP - Guarulhos</option>  
+                        <select name="univ" id="univ" class="universidade">
+                        <option value="IFSP">IFSP</option>  
                         <option value="Universidade Guarulhos">Universidade Guarulhos</option>
                         <option value="UNIFESP">UNIFESP</option>
                         <option value="Anhanguera">Anhanguera</option>

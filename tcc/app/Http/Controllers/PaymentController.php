@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\EmailConfirmacao;
 use Session;
 use Stripe;
 
@@ -37,9 +38,11 @@ class PaymentController extends Controller
 
         Session::flash('sucess', 'Pagamento realizado com sucesso');
 
-        Mail::raw('Você acaba de realizar uma reserva.', function($message){
-            $message->to(Auth::user()->email)->subject('Reserva de Imóvel');
-        });
+        // Mail::raw('Você acaba de realizar uma reserva.', function($message){
+        //     $message->to(Auth::user()->email)->subject('Reserva de Imóvel');
+        // });
+
+        Mail::to(Auth::user()->email)->send(new EmailConfirmacao());
 
         return redirect('index');
     }

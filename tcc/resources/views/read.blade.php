@@ -8,12 +8,13 @@
     <h2 class="titulo_anuncio">{{$anuncio->titulo}}</h2>
     <div class="col-md-10 offset-md-1">
         <div class="row">
-            <div id="image-container" class="col-md-6">
-                <img src="/img/anuncios/{{$anuncio->image}}" class="img-fluid" alt="{{$anuncio->titulo}}">
-            </div>
+            
         
         <div id="info-container" class="col-md-6">
-                  
+            <div id="image-container" class="col-md-6">
+                <img src="/img/anuncios/{{$anuncio->image}}" class="img-fluid" alt="{{$anuncio->titulo}}">
+            </div>            
+        
             <h5>Endereço</h5><p>{{$anuncio->endereco}}</p>
             <h5>CEP</h5><p>{{$anuncio->cep}}</p>
             <h5>Universidade Próxima</h5><p>{{$anuncio->univ}}</p>
