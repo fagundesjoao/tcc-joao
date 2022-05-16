@@ -30,7 +30,7 @@
             
             <input type="number" name="preco" id="preco" value="{{$anuncio->preco}}" readonly hidden>          
            
-            <input type="submit" class="btn btn-primary" value="Ver mais"/>
+            <input type="submit" class="btn btn-primary" value="Veja mais"/>
 
         
         </form> 
