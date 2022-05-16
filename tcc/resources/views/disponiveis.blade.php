@@ -15,7 +15,7 @@
     <div id="cards-container" class="row">
         @foreach($anuncios as $anuncio)
         <div class="card col-md-3">
-            <img src="/img/anuncios/{{$anuncio->image}}" class="card-img-top" alt="">
+            <img src="/img/anuncios/{{$anuncio->image}}" class="card-img-top" alt="imagem-anuncio">
             <div class="card-body">
               <h5 class="card-title">{{$anuncio->titulo}}</h5>
               <p class="card-text">{{$anuncio->endereco}}</h5>
