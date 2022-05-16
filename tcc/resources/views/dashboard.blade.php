@@ -34,9 +34,10 @@
         @endforeach
     </tbody>
     </table>
+   
     @else
     <p>Você ainda não possui anúncios, <a href="/anuncios/create">Cadastrar Anúncio</a></p>
     @endif 
 </div>
-</body>
-</html>
+
+@include('/components/footer')

@@ -3,40 +3,76 @@
 
 
 
-    <div id="form">
-        <h3>Cadastro de Anúncio</h3>
-        <br/>
-        <form action="/anuncios" id="formCad" method="post" enctype="multipart/form-data">
-            @csrf 
-            
-            <input type="text" name="titulo" id="titulo" placeholder="Título do Anúncio" required/>
-            <input type="text" name="endereco" id="endereco" placeholder="Endereço" required/><br/><br/>
-            <input type="text" name="cep" id="cep" placeholder="CEP" pattern="[0-9]+$" required/>
-            <input type="text" name="bairro" id="bairro" placeholder="Bairro"/><br/><br/>
-            <select name="univ" id="univ">
-                <option value="IFSP">IFSP - Guarulhos</option>  
-                <option value="Universidade Guarulhos">Universidade Guarulhos</option>
-                <option value="UNIFESP">UNIFESP</option>
-                <option value="Anhanguera">Anhanguera</option>
-                <option value="São Judas">São Judas</option>
-                <option value="ENIAC">ENIAC</option>
-                <option value="FIG UNIMESP">FIG UNIMESP</option>
-                <option value="UNINOVE">UNINOVE</option>
+  <div id="cadastro">
+        <h3>Cadastrar Anúncio</h3>
+        <form action="/anuncios" class="row g-3" method="post" enctype="multipart/form-data">
+            @csrf
+          <div class="col-md-6">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" name="titulo" id="titulo" maxlength="100" required>
+          </div>
+          <div class="col-md-6">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" name="endereco" id="endereco" maxlength="300" required>
+          </div>
+            <div class="col-md-6">
+            <label for="cep" class="form-label">CEP</label>
+            <input type="text" class="form-control" pattern="[0-9]{8}" name="cep" id="cep" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Bairro</label>
+            <input type="text" class="form-control" id="bairro" name="bairro" maxlength="80" required>
+          </div>
 
+          <div class="col-md-6">
+            <label for="univ" class="form-label">Universidade</label>
+            <select id="univ" name="univ" class="form-select">
+               <option value="IFSP">IFSP - Guarulhos</option>  
+                        <option value="Universidade Guarulhos">Universidade Guarulhos</option>
+                        <option value="UNIFESP">UNIFESP</option>
+                        <option value="Anhanguera">Anhanguera</option>
+                        <option value="São Judas">São Judas</option>
+                        <option value="ENIAC">ENIAC</option>
+                        <option value="FIG UNIMESP">FIG UNIMESP</option>
+                        <option value="UNINOVE">UNINOVE</option>
             </select>
-            
-            <input type="text" name="area_total" id="area_total" placeholder="Área Total (m²)" pattern="[0-9]+$" required/><br/><br/>
-            <input type="text" name="qtd_quartos" id="qtd_quartos" placeholder="Número de Quartos" pattern="[0-9]+$" required/>
-            <input type="text" name="descricao" id="descricao" placeholder="Descrição"/><br/><br/>
-            <input type="text" name="qtd_hospedes" id="qtd_hospedes" placeholder="Quantidade de Hóspedes"/>
-            <input type="text" name="preco" id="preco" placeholder="Preço" pattern="[0-9]+$" required/><br/><br/>
-            <label for="img">Enviar imagem:</label>
-        
-            <input type="file" id="img" name="image" accept="image/png, image/jpeg"/>
-            <br/><br/>
-            <input type="submit" class="criar_anuncio" value="Criar Anúncio"/>
+          </div>
+          <div class="col-md-6">
+            <label for="area" class="form-label">Área Total (m²)</label>
+            <input type="text" class="form-control" pattern="[0-9]{2,11}" name="area_total" id="area_total" required>
+          </div>
+           <div class="col-md-4">
+            <label for="quartos" class="form-label">Nº de Quartos</label>
+            <input type="text" class="form-control" pattern="[0-9]{1,11}" name="qtd_quartos" id="qtd_quartos" required>
+          </div>
+           
+          <div class="col-md-4">
+            <label for="quartos" class="form-label">Nº de Hóspedes</label>
+            <input type="text" class="form-control" pattern="[0-9]{1,11}" name="qtd_hospedes" id="qtd_hospedes" required>
+          </div>
 
+          <div class="col-md-4">
+            <label for="preco" class="form-label">Preço diária (R$)</label>
+            <input type="text" class="form-control" pattern="[0-9]+$" id="preco" name="preco" required>
+          </div>
+          
+          <div class="col-md-12">
+            <label for="descricao" class="form-label">Descrição</label>
+            <input type="text" class="form-control" name="descricao" id="descricao" required>
+          </div>
+          
+            <div class="col-md-4">
+            <label for="imagem" class="form-label">Enviar Imagem</label>
+            <input type="file" class="form-control" name="image" id="img" accept="image/png, image/jpeg" required>
+          </div>
+
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          </div>
         </form>
-</div>
+    </div>
+
+
+@include('/components/footer')
 </body>
 </html>

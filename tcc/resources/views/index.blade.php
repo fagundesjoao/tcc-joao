@@ -8,25 +8,27 @@
     <div id="datas">
               
                
-        <form action="/disponiveis" id="formBusca" method="POST">
+        <form action="/disponiveis" class="row g-3" id="formBusca" method="POST">
             @csrf
-
-            <table id="tabela-busca"> 
-                <tr>
-                    <td><h5>Data Inicial:</h5></td>
-                    <td><h5>Data Final:</h5></td>
-                    <td><h5>Preço até:</h5></td>
-                    <td><h5>Nº de Hóspedes:</h5></td>
-                    <td><h5>Universidade:</h5></td>
-                </tr>   
-
-                <tr>
-                    <td><input type="date" name="data_inicial" class="data_inicial" id="di" required> </td>
-                    <td><input type="date" name="data_final" class="data_final" id="df" required></td>
-                    <td><input type="number" name="preco" class="preco" id="preco" value="1000" required></td>
-                    <td><input type="number" name="hospedes" class="hospedes" id="hospedes" value="0" required></td>
-                    <td>
-                        <select name="univ" id="univ" class="universidade">
+            <div class="col-md-3">
+                <label for="inicio" class="form-label">Data Inicial</label>        
+                <input type="date" name="data_inicial" class="form-control" id="di" required>
+            </div>
+            <div class="col-md-3">
+                <label for="fim" class="form-label">Data Final</label>  
+                <input type="date" name="data_final" class="form-control" id="df" required>
+            </div>
+            <div class="col-md-2">
+                <label for="preco" class="form-label">Preço</label>
+                <input type="number" name="preco" class="form-control" id="preco" value="1000" required>
+            </div>
+            <div class="col-md-2">
+                <label for="hospedes" class="form-label">Nº Hóspedes</label>    
+                <input type="number" name="hospedes" class="form-control" id="hospedes" value="0" required>
+            </div>    
+            <div class="col-md-2">
+                <label for="univ" class="form-label">Universidade</label>        
+                <select name="univ" id="univ" class="form-control">
                         <option value="IFSP">IFSP</option>  
                         <option value="Universidade Guarulhos">Universidade Guarulhos</option>
                         <option value="UNIFESP">UNIFESP</option>
@@ -35,22 +37,20 @@
                         <option value="ENIAC">ENIAC</option>
                         <option value="FIG UNIMESP">FIG UNIMESP</option>
                         <option value="UNINOVE">UNINOVE</option>
-                    </td>
-            </select>
-                </tr>
+                    
+                </select>
+            </div>    
 
-            </table>
-                <input type="submit" id="busca_imovel" class="busca_imovel" value="Buscar"/>
-            
-                     
-            
-
-        
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+                            
+                    
         </form> 
         
         
 
-     
-    </body>
-</hmtl>
+    </div>
+
+@include('/components/footer')
  

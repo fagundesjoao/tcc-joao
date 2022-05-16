@@ -20,7 +20,7 @@
           <a class="nav-link active" href="../index">Busca</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="anuncios/create">Cadastrar Anúncio</a>
+          <a class="nav-link active" href="../anuncios/create">Cadastrar Anúncio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url('/logout') }}">Logout</a>
+          <a class="nav-link active" aria-current="page" href="{{ url('/logout') }}">Sair</a>
         </li>
       </ul>
      

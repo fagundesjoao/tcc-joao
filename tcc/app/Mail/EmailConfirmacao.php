@@ -31,6 +31,7 @@ class EmailConfirmacao extends Mailable
      */
     public function build()
     {
-        return $this->view('confirmacaoreserva');
+        $nome = Auth::user()->name;
+        return $this->view('confirmacaoreserva', ['nome' => $nome]);
     }
 }

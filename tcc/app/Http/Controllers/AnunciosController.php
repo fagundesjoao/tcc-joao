@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Anuncio;
@@ -68,7 +69,7 @@ class AnunciosController extends Controller
         }
 
         $anuncio->save();
-        return view('anuncios.create');
+        return view('anuncios/create');
     }
 
     
@@ -96,16 +97,15 @@ class AnunciosController extends Controller
         $ndias = $ndias + 1;
         
         $total = $preco * $ndias;
-
-        //dd($total);
+                
         return view('read', ['anuncio'=>$anuncio, 'inicio'=>$inicio, 'fim'=>$fim, 'total'=>$total]);
         
     }
 
     public function dashboard(){
-        $user = auth()->user();
+        $user = Auth::user()->id;
         
-        $anuncios = $user->anuncios;
+        $anuncios = DB::table('anuncios')->where('anuncios.user_id', $user)->paginate(5);
         
         //dd($anuncios);
         return view('dashboard', ['anuncios' => $anuncios]);

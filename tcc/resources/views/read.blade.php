@@ -58,6 +58,6 @@
             
 
 </div>
-    </body>
-</hmtl>
+
+@include('/components/footer')
  

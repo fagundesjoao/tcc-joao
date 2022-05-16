@@ -6,42 +6,39 @@
         <title>TCC</title>
  
         <style>
-       
-input[type=text], select {
-  width: 49%;
-  padding: 12px 20px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  box-sizing: border-box;
+html{
+  height: 100%;
+  min-height: 100%;
 }
 
-/* input[type=submit] {
-  width: 50%;
-  background-color: #000F45;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-} */
-
-input[type=submit]:hover {
-  background-color: #4682B4;
-  
+body{
+  min-height: 100%;
 }
 
 #form{
   width: 50%;
-  height: 50%;
   border-radius: 5px;
   background-color: #F0F0F0;
   padding: 20px;
   border-radius: 30px;
   margin-left: 25%;
-  margin-top: 5%;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
+
+/*Cadastro anúncio*/
+
+#cadastro{
+  margin-top: 25px;
+  width: 50%;
+  margin-left: 25%;
+  border-style: solid;
+  border-color: #F0F0F0;
+  border-radius: 10px;
+  padding: 5px;
+
+}
+
 h3{
   text-align: center;
 }
@@ -57,30 +54,6 @@ h3{
   cursor: pointer;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #000F45;
-  width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
-  padding: 0;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: right;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #fff;
-  color: #000F45;
-}
 
 #meus_an{
   padding: 20px;
@@ -101,16 +74,19 @@ h3{
 }
 
 #datas{
-  
+  height: 100%;
+  min-height: 100%;
   margin: auto;
   width: 100%;
   background-color: #FAFAFA;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
- 
+  align-items: center;
 }
 
 #formBusca{
+  height: 100%;
+  min-height: 100%;
   width: 100%;
   text-align: center;
 }
@@ -344,6 +320,21 @@ a.reservar{
 #reserva-imoveis{
   width: 100%;
   text-align: center;
+}
+
+/*Footer e Nav*/
+
+footer{
+  color: #FFF;
+  width: 100%;
+  
+}
+
+#rodape{
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 

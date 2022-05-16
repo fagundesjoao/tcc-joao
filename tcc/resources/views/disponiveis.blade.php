@@ -9,17 +9,17 @@
       
             
   
-    <div id="anuncios-container" class="col-md-12">
+    <div class="col-md-12">
     <h3>Anúncios</h3>
     @if(count($anuncios)>0)
     <div id="cards-container" class="row">
         @foreach($anuncios as $anuncio)
         <div class="card col-md-3">
-            <img src="/img/anuncios/{{$anuncio->image}}" alt="">
+            <img src="/img/anuncios/{{$anuncio->image}}" class="card-img-top" alt="">
             <div class="card-body">
               <h5 class="card-title">{{$anuncio->titulo}}</h5>
-              <h5 class="card-address">{{$anuncio->endereco}}</h5>
-              <h5 class="card-cep">{{$anuncio->univ}}</h5>
+              <p class="card-text">{{$anuncio->endereco}}</h5>
+              <p class="card-text">{{$anuncio->univ}}</h5>
               
             
               <form action="/anuncios/{{$anuncio->id}}" id="freserva" method="POST" enctype="multipart/form-data">
@@ -30,7 +30,7 @@
             
             <input type="number" name="preco" id="preco" value="{{$anuncio->preco}}" readonly hidden>          
            
-            <input type="submit" class="btn-vermais" value="Ver mais"/>
+            <input type="submit" class="btn btn-primary" value="Ver mais"/>
 
         
         </form> 
@@ -45,6 +45,6 @@
     <p>Não há anúncios na(s) data(s) e/ou preço especificado(s). <a href="/index">Voltar para a Busca</a></p>
     @endif
    
-    </body>
-</hmtl>
+
+@include('/components/footer')
  

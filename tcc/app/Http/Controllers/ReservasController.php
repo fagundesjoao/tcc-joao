@@ -21,7 +21,7 @@ class ReservasController extends Controller
     public function agenda(){
 
         $user_id = Auth::user()->id;
-        $reservas = DB::SELECT("select anuncios.id, anuncios.titulo, reservas.anuncio_id, reservas.data_inicial, reservas.data_final from anuncios, reservas where anuncios.id = reservas.anuncio_id and anuncios.user_id = '$user_id'");
+        $reservas = DB::table('anuncios')->where('anuncios.user_id', $user_id)->join('reservas', 'anuncios.id', '=', 'reservas.anuncio_id')->paginate(5);
 
         return view('agenda', ['reservas' => $reservas]);
     }
@@ -29,7 +29,7 @@ class ReservasController extends Controller
     public function minhasReservas(){
        $user_id = Auth::user()->id;
         
-       $minhas_reservas = DB::table('reservas')->where('user_id', $user_id)->paginate(10);
+       $minhas_reservas = DB::table('reservas')->where('reservas.user_id', $user_id)->join('anuncios', 'reservas.anuncio_id', '=', 'anuncios.id')->paginate(5);
 
        return view('reservas', ['minhas_reservas' => $minhas_reservas]);
     }
