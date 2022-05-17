@@ -5,7 +5,7 @@
 
 
 
-    <div id="datas">
+    <div id="busca">
               
                
         <form action="/disponiveis" class="row g-3" id="formBusca" method="POST">
@@ -47,10 +47,11 @@
                             
                     
         </form> 
-        
-        
+               
 
     </div>
+
+    
 
 @include('/components/footer')
  

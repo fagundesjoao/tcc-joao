@@ -69,5 +69,4 @@ Route::get('/dashboard','AnunciosController@dashboard', function () {
 
 
 
-
 require __DIR__.'/auth.php';

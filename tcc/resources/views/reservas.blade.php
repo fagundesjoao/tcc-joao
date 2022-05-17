@@ -1,9 +1,9 @@
 @include('/components/header')
 @include('/components/navbar')
 
-
+<div id="reservas">
     <div class="col-md-10 offset-md-1 dashboard-title-container">
-        <h3>Minhas Reservas</h3>
+        <h3>Histórico de Reservas</h3>
     </div>
         <div class="col-md-10 offset-md-1 dashboard-anuncios-container">
         @if(count($minhas_reservas)>0)
@@ -36,5 +36,5 @@
         <p>Você ainda não possui anúncios, <a href="/anuncios/create">Cadastrar Anúncio</a></p>
         @endif 
     </div>
-
+</div>
 @include('/components/footer')

@@ -43,8 +43,9 @@
             <br/>
             <br/>
             Total (R$): <input type="number" name="total" id="total" value="{{$total}}" readonly required>
-           
-            <input type="submit" class="reservar" value="Reservar"/>
+            <br/>
+            <br/>
+            <input type="submit" class="btn btn-primary" value="Reservar"/>
 
         
         </form> 

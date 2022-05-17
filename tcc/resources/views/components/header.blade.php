@@ -6,13 +6,9 @@
         <title>TCC</title>
  
         <style>
-html{
+html, body{
   height: 100%;
-  min-height: 100%;
-}
-
-body{
-  min-height: 100%;
+  margin: 0;
 }
 
 #form{
@@ -36,7 +32,7 @@ body{
   border-color: #F0F0F0;
   border-radius: 10px;
   padding: 5px;
-
+  margin-bottom: 25px;
 }
 
 h3{
@@ -65,16 +61,23 @@ h3{
   border-radius: 30px;
 }
 
-/*Busca*/ 
+/*View disponíveis*/ 
 
-#busca{
-  padding: 20px;
-  margin: auto;
-
+#disponiveis{
+  min-height: 100%;
+  padding: 5px;
+  margin-bottom: -50px;
+  max-width: 100%;
+  
 }
 
-#datas{
-  height: 100%;
+.col-md-10{
+  margin: 0 auto;
+}
+
+/*View index*/
+
+#busca{
   min-height: 100%;
   margin: auto;
   width: 100%;
@@ -82,6 +85,8 @@ h3{
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
   align-items: center;
+  padding: 5px;
+  margin-bottom: -50px;
 }
 
 #formBusca{
@@ -89,36 +94,6 @@ h3{
   min-height: 100%;
   width: 100%;
   text-align: center;
-}
-
-#tabela-busca{
-  width: 100%;
-}
-
-
-.data_inicial{
-  width: 100%;
-  border-radius: 20px;
-}
-
-.data_final{
-  width: 100%;
-  border-radius: 20px;
-}
-
-.preco{
-  width: 100%;
-  border-radius: 20px;
-}
-
-.hospedes{
-  width: 100%;
-  border-radius: 20px;
-}
-
-.universidade{
-  background-color: #FFF;
-  width: 100%;
 }
 
 
@@ -130,50 +105,7 @@ h3{
   border: none;
 }
 
-/* Containers anúncios */
 
-#anuncios-container{
-  padding:50px;
-  
-  
-}
-
-#cards-container{
-  display: flex;
-  flex-wrap: wrap;
-  
-}
-
-#anuncios-container .card{
-  flex: 1 0 24%;
-  max-width: 24%;
-  border-radius: 10px;
-  padding: 0;
-  margin: 5px;
-  border: 0.5px solid #CCC;
-  text-align: center;
-  background-color: #FAFAFA;
-}
-
-#anuncios-container img{
-  max-width:100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-#anuncios-container .btn-vermais{
-  text-decoration: none;
-  background-color: #FF8C00;
-  color: #FFFFFF;
-  padding: 1px;
-  border-radius: 5px;
-  width: 25%;
-  
-}
-
-#anuncios-container .btn-vermais:hover{
-  background-color: #000F45;
-}
 
 .row{
   margin: 0;
@@ -236,6 +168,11 @@ body{
   
 }
 
+#meus_anuncios{
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
 /*Edit*/
 
 .img-preview{
@@ -271,22 +208,6 @@ a.reservar{
   
 }
 
-.modal-container{
-  width: 50%;
-  height: 100%;
-  margin-left: 25%;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  opacity: 0;
-  background-color: #F0F0F0;
-  border-radius: 5px;
-}
-
-.modal-container.show{
-  opacity: 1;
-}
-
 
 #formRes{
   width: 50%;
@@ -311,31 +232,30 @@ a.reservar{
 
 /* Agenda */
 
-.agenda_reservas{
-  width: 50%;
-  align-items: center;
-  margin-left: 25%;
+#agenda{
+  min-height: 100%;
+  margin-bottom: -50px;
 }
 
-#reserva-imoveis{
-  width: 100%;
-  text-align: center;
+
+/*Minhas reservas*/
+
+#reservas{
+  min-height: 100%;
+  margin-bottom: -50px;
 }
 
-/*Footer e Nav*/
 
 footer{
   color: #FFF;
-  width: 100%;
-  
+  height: 50px;
+  bottom: 0;
+  background-color: #000;
+  right: 0;
 }
 
-#rodape{
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-}
+
+
 
 
 
