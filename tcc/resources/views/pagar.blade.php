@@ -21,7 +21,16 @@
          width: 61%;
          }
 
-       
+         .credit-card-box{
+           border-style: solid;
+           border-color: #F0F0F0;
+           border-radius: 10px;
+           width: 100%;
+           padding: 20px;
+           
+        }
+
+             
       </style>
    </head>
    <body>
@@ -62,15 +71,15 @@
                            </div>
                         </div>
                         <div class='form-row row'>
-                           <div class='col-xs-12 form-group required'>
+                           <div class='col-xs-12 col-md-12 form-group required'>
                               <label class='control-label'>Nome no Cartão</label> <input
                                  class='form-control' size='60' type='text' required>
                            </div>
                         </div>
                         <div class='form-row row'>
-                           <div class='col-xs-12 form-group card required'>
+                           <div class='col-xs-12 col-md-12 form-group card required'>
                               <label class='control-label'>Número do Cartão</label> <input
-                                 autocomplete='off' class='form-control card-number' size='55'
+                                 autocomplete='off' class='form-control card-number' size='16'
                                  type='text' required>
                            </div>
                         </div>
@@ -96,11 +105,14 @@
                               <div class='alert-danger alert'>
                               </div>
                            </div>
-                        </div>
-                        <div class="row">
                            <div class="col-xs-12">
                            <button class="btn btn-primary btn-lg btn-block" type="submit">Pagar</button>
                            </div>
+                        </div>
+                        <div class="row">
+                           
+                           
+                           
                         </div>
                         
 

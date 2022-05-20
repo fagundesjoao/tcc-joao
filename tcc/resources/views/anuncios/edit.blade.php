@@ -1,37 +1,81 @@
 @include('/components/header')
+@include('/components/navbar')
 
 
-<body>
-
-    <button class="voltar" onClick="history.go(-1)"><<<</button>
     <div id="form">
     
         <h2>Edição de Anúncio: {{$anuncio->titulo}}</h2>
         <br/>
-        <form action="/anuncios/update/{{$anuncio->id}}" id="formCad" method="post" enctype="multipart/form-data">
+        <form action="/anuncios/update/{{$anuncio->id}}" class="row g-3" method="post" enctype="multipart/form-data">
             @csrf 
             @method('PUT')
             <img src="/img/anuncios/{{$anuncio->image}}" alt="{{$anuncio->titulo}}" class="img-preview">
-            <input type="text" name="titulo" id="titulo" placeholder="Título do Anúncio" value="{{$anuncio->titulo}}" required/>
-            <input type="text" name="endereco" id="endereco" placeholder="Endereço" value="{{$anuncio->endereco}}" required/><br/><br/>
-            <input type="text" name="cep" id="cep" placeholder="CEP" pattern="[0-9]+$" value="{{$anuncio->cep}}" required/>
-            <select name="univ" id="univ" value="{{$anuncio->univ}}">
-                <option value="ifsp-gru">IFSP Guarulhos</option>  
-                <option value="ung">Universidade Guarulhos</option> 
-            </select>
-            <br/><br/>
-            <input type="text" name="area_total" id="area_total" placeholder="Área Total" pattern="[0-9]+$" value="{{$anuncio->area_total}}" required/>
-            <input type="text" name="qtd_quartos" id="qtd_quartos" placeholder="Número de Quartos" pattern="[0-9]+$" value="{{$anuncio->qtd_quartos}}" required/><br/><br/>
-            <input type="text" name="descricao" id="descricao" placeholder="Descrição" value="{{$anuncio->descricao}}"/>
+            <div class="col-md-6">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" name="titulo" value="{{$anuncio->titulo}}" id="titulo" maxlength="100" required>
+            </div>
+            <div class="col-md-6">
+                <label for="endereco" class="form-label">Endereço</label>
+                <input type="text" class="form-control" name="endereco" value="{{$anuncio->endereco}}" id="endereco" maxlength="300" required>
+            </div>
+                <div class="col-md-6">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" pattern="[0-9]{8}" name="cep" value="{{$anuncio->cep}}" id="cep" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Bairro</label>
+                <input type="text" class="form-control" id="bairro" name="bairro" value="{{$anuncio->bairro}}" maxlength="80" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="univ" class="form-label">Universidade</label>
+                <select id="univ" name="univ" class="form-select">
+                <option value="IFSP">IFSP - Guarulhos</option>  
+                            <option value="Universidade Guarulhos">Universidade Guarulhos</option>
+                            <option value="UNIFESP">UNIFESP</option>
+                            <option value="Anhanguera">Anhanguera</option>
+                            <option value="São Judas">São Judas</option>
+                            <option value="ENIAC">ENIAC</option>
+                            <option value="FIG UNIMESP">FIG UNIMESP</option>
+                            <option value="UNINOVE">UNINOVE</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="area" class="form-label">Área Total (m²)</label>
+                <input type="text" class="form-control" pattern="[0-9]{2,11}" name="area_total" value="{{$anuncio->area_total}}" id="area_total" required>
+            </div>
+            <div class="col-md-4">
+                <label for="quartos" class="form-label">Nº de Quartos</label>
+                <input type="text" class="form-control" pattern="[0-9]{1,11}" name="qtd_quartos" value="{{$anuncio->qtd_quartos}}" id="qtd_quartos" required>
+            </div>
             
-            <input type="number" name="preco" id="preco" placeholder="Preço" value="{{$anuncio->preco}}" required/><br/><br/>
-            <label for="img">Enviar imagem:</label>
-        
-            <input type="file" id="image" name="image" accept="image/png, image/jpeg"/>
-            <br/><br/>
-            <input type="submit" value="Editar Anúncio"/>
+            <div class="col-md-4">
+                <label for="quartos" class="form-label">Nº de Hóspedes</label>
+                <input type="text" class="form-control" pattern="[0-9]{1,11}" name="qtd_hospedes" value="{{$anuncio->qtd_hospedes}}" id="qtd_hospedes" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="preco" class="form-label">Preço diária (R$)</label>
+                <input type="text" class="form-control" pattern="[0-9]+$" id="preco" name="preco" value="{{$anuncio->preco}}" required>
+            </div>
+            
+            <div class="col-md-12">
+                <label for="descricao" class="form-label">Descrição</label>
+                <input type="text" class="form-control" name="descricao" id="descricao" value="{{$anuncio->descricao}}" required>
+            </div>
+            
+                <div class="col-md-4">
+                <label for="imagem" class="form-label">Enviar Imagem</label>
+                <input type="file" class="form-control" name="image" id="img" accept="image/png, image/jpeg" required>
+            </div>
+
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </div>
 
         </form>
     </div>
 
 @include('/components/footer')
+</body>
+</html>
