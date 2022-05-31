@@ -2,9 +2,9 @@
 @include('/components/navbar')
 
 
-    <div id="form">
+    <div id="edit">
     
-        <h2>Edição de Anúncio: {{$anuncio->titulo}}</h2>
+        <h3>Edição de Anúncio: {{$anuncio->titulo}}</h3>
         <br/>
         <form action="/anuncios/update/{{$anuncio->id}}" class="row g-3" method="post" enctype="multipart/form-data">
             @csrf 

@@ -11,10 +11,12 @@ html, body{
   margin: 0;
 }
 
-#form{
+#edit{
   width: 50%;
   border-radius: 5px;
-  background-color: #F0F0F0;
+  border-color: #F0F0F0;
+  border-style: solid;
+  border-color:;
   padding: 20px;
   border-radius: 30px;
   margin-left: 25%;
@@ -157,16 +159,24 @@ body{
   display: inline-block;
 }
 
-.dashboard-anuncios-container a{
+.edit{
   text-decoration: none;
-  
+  color: #FFF;
 }
 
-.dashboard-anuncios-container button{
-  border-radius: 20px;
-  background-color: #F0F0F0;
-  
+.edit:hover{
+  color: #FFF;
 }
+
+.titulo_anuncio{
+  text-decoration: none;
+  color: #000;
+}
+
+.titulo_anuncio:hover{
+  color: #000;
+}
+
 
 #meus_anuncios{
   min-height: 100%;
@@ -186,6 +196,8 @@ body{
   background-color: #000F45;
   color: #ffffff;
 }
+
+
 
 /*Reservar*/ 
 

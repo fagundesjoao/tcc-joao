@@ -21,13 +21,13 @@
             @foreach($anuncios as $anuncio)
                 <tr>
                     <td scope="row">{{$loop->index + 1}}</td>
-                    <td><a href="#">{{$anuncio->titulo}}</a></td>
+                    <td><a href="#" class="titulo_anuncio">{{$anuncio->titulo}}</a></td>
                     <td>
-                    <button><a href="/anuncios/edit/{{$anuncio->id}}">Editar</a></button>
+                    <button class="btn btn-primary"><a href="/anuncios/edit/{{$anuncio->id}}" class="edit">Editar</a></button>
                     <form action="/anuncios/{{$anuncio->id}}" method="POST">
                         @csrf 
                         @method('DELETE')
-                        <button type="submit" onclick="return confirm('Você tem certeza que deseja excluir este anúncio?')">Deletar</button>
+                        <button type="submit" class="btn btn-primary" onclick="return confirm('Você tem certeza que deseja excluir este anúncio?')">Deletar</button>
                     </form>
                     </td>
                     </tr>

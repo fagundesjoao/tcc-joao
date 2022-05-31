@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-2">
                 <label for="hospedes" class="form-label">Nº Hóspedes</label>    
-                <input type="number" name="hospedes" class="form-control" id="hospedes" value="0" required>
+                <input type="number" name="hospedes" class="form-control" id="hospedes" value="1" required>
             </div>    
             <div class="col-md-2">
                 <label for="univ" class="form-label">Universidade</label>        

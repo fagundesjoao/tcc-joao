@@ -45,8 +45,7 @@ class ReservasController extends Controller
        
        if($data_inicial<=$data_final){
         $anuncios=DB::SELECT("select * from anuncios where id not in (select anuncio_id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco' and user_id != '$user_id' and univ = '$univ' and qtd_hospedes>='$hospedes' ");
-       
-            
+                   
         
         return view('disponiveis', ['anuncios' => $anuncios, 'data_inicial' => $data_inicial, 'data_final' => $data_final ]);
       
