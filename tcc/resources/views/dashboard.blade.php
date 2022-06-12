@@ -24,10 +24,10 @@
                     <td><a href="#" class="titulo_anuncio">{{$anuncio->titulo}}</a></td>
                     <td>
                     <button class="btn btn-primary"><a href="/anuncios/edit/{{$anuncio->id}}" class="edit">Editar</a></button>
-                    <form action="/anuncios/{{$anuncio->id}}" method="POST">
+                    <form action="/dashboard" method="POST">
                         @csrf 
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-primary" onclick="return confirm('Você tem certeza que deseja excluir este anúncio?')">Deletar</button>
+                        <input type="number" value="{{$anuncio->id}}" name="id_anuncio" hidden>
+                        <button type="submit" class="btn btn-primary" onclick="return confirm('Você tem certeza que deseja desativar este anúncio?')">Desativar</button>
                     </form>
                     </td>
                     </tr>

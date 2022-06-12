@@ -30,6 +30,7 @@ class CreateAnunciosTable extends Migration
             $table->string('descricao');
             $table->double('preco',10,2);
             $table->string('image');
+            $table->integer('ativo');
             $table->timestamps();
         });
 

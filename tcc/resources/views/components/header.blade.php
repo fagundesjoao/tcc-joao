@@ -264,6 +264,7 @@ footer{
   bottom: 0;
   background-color: #000;
   right: 0;
+  text-align: center;
 }
 
 

@@ -50,6 +50,9 @@ Route::put('/anuncios/update/{id}', 'AnunciosController@update')->middleware('au
 //Verificação de disponibilidade
 Route::post('/disponiveis', 'ReservasController@verificacao')->middleware(['auth'])->name('/disponiveis');
 
+//Desativação de Anúncio
+Route::post('/dashboard', 'AnunciosController@desativar')->middleware('auth');
+
 //Reserva
 Route::post('/pagar', 'ReservasController@store');
 Route::get('/agenda', 'ReservasController@agenda');

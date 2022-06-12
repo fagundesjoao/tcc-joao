@@ -14,6 +14,7 @@ class Reserva extends Model
            'total',
            'ocupado'];
 
+   
     public function user(){
         return $this->belongsTo('App\Models\User');
     }

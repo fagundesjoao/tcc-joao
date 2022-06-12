@@ -4,6 +4,7 @@
 <div id="reservas">
     <div class="col-md-10 offset-md-1 dashboard-title-container">
         <h3>Histórico de Reservas</h3>
+        
     </div>
         <div class="col-md-10 offset-md-1 dashboard-anuncios-container">
         @if(count($minhas_reservas)>0)
@@ -33,7 +34,7 @@
         {{$minhas_reservas->links()}}
 
         @else
-        <p>Você ainda não possui anúncios, <a href="/anuncios/create">Cadastrar Anúncio</a></p>
+        <p>Você ainda não possui reservas.</p>
         @endif 
     </div>
 </div>

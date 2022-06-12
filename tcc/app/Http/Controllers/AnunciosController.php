@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Anuncio;
 
 
+
 class AnunciosController extends Controller
 {
     /**
@@ -55,6 +56,7 @@ class AnunciosController extends Controller
         $anuncio->qtd_hospedes = $request->qtd_hospedes;
         $anuncio->descricao = $request->descricao;
         $anuncio->preco = $request->preco;
+        $anuncio->ativo = '1';
 
         //Upload de imagem
         if($request->hasFile('image') && $request->file('image')->isValid()){
@@ -104,8 +106,9 @@ class AnunciosController extends Controller
 
     public function dashboard(){
         $user = Auth::user()->id;
+
         
-        $anuncios = DB::table('anuncios')->where('anuncios.user_id', $user)->paginate(5);
+        $anuncios = DB::table('anuncios')->where('anuncios.user_id', $user)->where('anuncios.ativo','=','1')->paginate(5);
         
         //dd($anuncios);
         return view('dashboard', ['anuncios' => $anuncios]);
@@ -166,4 +169,13 @@ class AnunciosController extends Controller
 
         return redirect('/dashboard')->with('msg', 'Anúncio excluído com sucesso!');
     }
+
+   public function desativar(Request $request){
+
+        $id = $request->id_anuncio;
+
+        $desativar = DB::UPDATE("update anuncios set ativo = 0 where id = '$id'");
+
+        return redirect('/dashboard');
+   }
 }

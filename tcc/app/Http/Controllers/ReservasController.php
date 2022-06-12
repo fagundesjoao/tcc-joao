@@ -23,7 +23,7 @@ class ReservasController extends Controller
         $user_id = Auth::user()->id;
         $pago = 1;
         $reservas = DB::table('anuncios')->where('anuncios.user_id', $user_id)->join('reservas', 'anuncios.id', '=', 'reservas.anuncio_id')->where('reservas.pago', $pago)->paginate(5);
-
+        
         return view('agenda', ['reservas' => $reservas]);
     }
 
@@ -44,7 +44,7 @@ class ReservasController extends Controller
         $user_id = Auth::user()->id;
        
        if($data_inicial<=$data_final){
-        $anuncios=DB::SELECT("select * from anuncios where id not in (select anuncio_id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco' and user_id != '$user_id' and univ = '$univ' and qtd_hospedes>='$hospedes' ");
+        $anuncios=DB::SELECT("select * from anuncios where id not in (select anuncio_id from reservas where '$data_inicial' <=data_final and '$data_final' >= data_inicial and ocupado = '1') and preco<='$preco' and user_id != '$user_id' and univ = '$univ' and qtd_hospedes>='$hospedes' and ativo = '1' ");
                    
         
         return view('disponiveis', ['anuncios' => $anuncios, 'data_inicial' => $data_inicial, 'data_final' => $data_final ]);
